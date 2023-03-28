@@ -18,7 +18,7 @@ export default function (bastion, opt = {}) {
             },
 
             async resolve(context, msg) {
-                const mcURL = "https://mcapi.us/server/status?ip=51.161.122.136&port=25595";
+                const mcURL = "https://mcapi.us/server/status?ip=199.48.94.240&port=25595";
 
                 let response = await fetch(mcURL);
                 if (response.ok) {
@@ -33,10 +33,10 @@ export default function (bastion, opt = {}) {
                             serverStatus = "Offline"
                         }
                         const embed = {
-                            "title": "SJBHA Minecraft Server",
+                            "title": "RBHA Minecraft Server",
                             "fields": [{
                                     "name": "Server IP",
-                                    "value": "51.161.122.136:25595"
+                                    "value": "199.48.94.240:25595"
                                 }, {
                                     "name": "Status",
                                     "value": serverStatus
@@ -71,13 +71,13 @@ export default function (bastion, opt = {}) {
             async resolve(context, msg) {
 
 
-                const mcURL = "https://mcapi.us/server/status?ip=51.161.122.136&port=25595";
+                const mcURL = "https://mcapi.us/server/status?ip=199.48.94.240&port=25595";
 
                 let response = await fetch(mcURL);
                 if (response.ok) {
                     let jsonResponse = await response.json();
                     if (jsonResponse.online === false) {
-                        return "The server is either offline or the bot is broken. Please dm @Devrim#1557 if the server is online."
+                        return "The server is either offline or the bot is broken. Please dm @xsnipuhx#9584 if the server is offline, or need to be whitelisted."
                     } else {
                         return "Current Players in the Server is: " + jsonResponse.players.now;
                     }
@@ -93,13 +93,13 @@ export default function (bastion, opt = {}) {
             },
 
             async resolve(context, msg) {
-                const mcURL = "https://eu.mc-api.net/v3/server/ping/51.161.122.136:25595";
+                const mcURL = "https://eu.mc-api.net/v3/server/ping/199.48.94.240:25595";
 
                 let response = await fetch(mcURL);
                 if (response.ok) {
                     let jsonResponse = await response.json();
                     if (jsonResponse.online === false) {
-                        return "The server is either offline or the bot is broken. Please dm @Devrim#1557 if the server is online."
+                        return "The server is either offline or the bot is broken. Please dm @xsnipuhx#9584 if the server is online."
                     } else {
                         let serverStatus = ""
                         if (jsonResponse.online === true) {
@@ -125,10 +125,10 @@ export default function (bastion, opt = {}) {
                         }
                         const embed = {
                             "color": 3066993,
-                            "title": "SJBHA Minecraft Server",
+                            "title": "RBHA Minecraft Server",
                             "fields": [{
                                     "name": "Server IP:Port",
-                                    "value": "51.161.122.136:25595"
+                                    "value": "199.48.94.240:25595"
                                 }, {
                                     "name": "Status",
                                     "value": serverStatus
