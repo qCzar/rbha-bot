@@ -8,8 +8,8 @@ import chalk from 'chalk'
 
 const baseConfig = {
     command: 'vote',
-    upvote: ':upvote:482642169757302784',
-    downvote: ':downvote:482642189437108225'
+    upvote: ':upvote:1008499227703390228',
+    downvote: ':downvote:1008499226361212928'
 }
 
 export default function(bastion, opt={}) {
