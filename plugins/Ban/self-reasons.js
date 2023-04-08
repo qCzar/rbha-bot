@@ -19,8 +19,7 @@ const list = [
   "Let anarchy rise over this communist hell hole of a discord.",
   "The bot has learned of anarachy.",
   "The bot made a misteak.",
-  ":conspiracist:",
-  "https://c.tenor.com/0mulJmIaEVIAAAAM/baby-little-girl.gif"
+  "https://c.tenor.com/0mulJmIaEVIAAAAM/baby-little-girl.gif",
 ];
 
 export default {
