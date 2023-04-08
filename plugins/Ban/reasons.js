@@ -9,7 +9,6 @@ const list = [
     "Owns a fedora (rule 3 no fedoras)",
     "Saying pineapple on a pizza is okay",
     "Producing too much salt",
-    "Sharing a buzzfeed article on facebook",
     "Texting while driving (rule 4 no idiots)",
     "Disrespecting the Queen",
     "VAC banned from a secure server",
@@ -33,14 +32,9 @@ const list = [
     "Didn't come through",
     "Posting an old meme (please keep up)",
     "Tried to ford the river but died of dystenary first",
-    "admitting that american peach gummies are better than canadian peach gummies",
     "RSVP'd to a meetup and ghosted it",
-    "Didn't take a photo when logging an Untappd beer",
-    "Leeching Netflix from someone they haven't spoken to in 3 years",
-    "New user. Same crap.",
     "Abusing !tldr",
     "Banished to Mankato",
-    "Invented a time machine and then forgot where they put it.",
     "Doesn't smell what The Rock is cooking.",
     "Never attending any meetups.",
     "Going for a run in Nike slides",
@@ -52,16 +46,16 @@ const list = [
     "Previous ban from club penguin detected and carried over [AUTOMATED EF-VAC-9521]",
     "Bullying another user until they leave",
     "I think we all know what they were doing when driving the ice cream truck",
-    "Snores in Spanish",
     "DMing the new person because they had a female avatar",
     "u suck",
     "Disagreed with Vinlam",
     "Lost in High Stakes Uno",
     "Didn't stack a +2 Card in Uno",
-    ":jordan:",
+    "<:jordan:1094050382747009114>",
     "Kicked a goose",
     "Gave Comic's cat bad vibes",
-    "Won't shut up about pineapple on pizza"
+    "Won't shut up about pineapple on pizza",
+    "Went on a vacation but didn't post travel pics to <#639852536248926219> and local cuisine reviews to <#639613763217260555>"
 ];
 
 export default {
