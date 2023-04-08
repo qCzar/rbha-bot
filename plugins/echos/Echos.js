@@ -22,7 +22,7 @@ export default function(bastion, config={}) {
         },
         {
             command: "v",
-            resolve: "Code last updated: 02/05/23"
+            resolve: "Code last updated: 04/07/23"
         },
         {
             command: "git",
@@ -36,8 +36,16 @@ export default function(bastion, config={}) {
 
         {
             command: "bug",
-            resolve: "Submit the bug here so I can keep track of them: https://github.com/qCzar/rbha-bot/issues/new"
-        }
+            resolve: "Submit bugs and feature requests here so I can keep track of them: https://github.com/qCzar/rbha-bot/issues/new"
+        },
+        {
+            command: "survey",
+            resolve: "We have a survey to consolidate and organize opinions on the non-sport amenties Rochester offers. Please take and share this Survey so your voice can help influence Rochester for years to come. https://rochesterbored.com/survey"
+        },
+        {
+            command: "website",
+            resolve: "We can be found online at: https://rochesterbored.com"
+        },
 
         // {
         //     command: "test",
