@@ -20,6 +20,7 @@ const list = [
   "The bot has learned of anarachy.",
   "The bot made a misteak.",
   "https://c.tenor.com/0mulJmIaEVIAAAAM/baby-little-girl.gif",
+  "Thank you for sharing your opinion"
 ];
 
 export default {
