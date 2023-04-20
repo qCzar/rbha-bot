@@ -22,7 +22,7 @@ export default function(bastion, config={}) {
         },
         {
             command: "v",
-            resolve: "Code last updated: 04/07/23"
+            resolve: "Code last updated: 04/19/23"
         },
         {
             command: "git",
@@ -40,7 +40,7 @@ export default function(bastion, config={}) {
         },
         {
             command: "survey",
-            resolve: "We have a survey to consolidate and organize opinions on the non-sport amenties Rochester offers. Please take and share this Survey so your voice can help influence Rochester for years to come. https://rochesterbored.com/survey"
+            resolve: "We have a survey to consolidate and organize opinions on the non-sport amenties Rochester offers. Please take and share this survey so your voice can help influence Rochester for years to come. https://rochesterbored.com/survey"
         },
         {
             command: "website",
