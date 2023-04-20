@@ -12,7 +12,7 @@ export default function(bastion, config={}) {
         },
         {
             command: "echo",
-            restrict: ["admin"],
+            restrict: ["668302298828767251"],
             options: bastion.parsers.split,
             resolve(context, [channelMention, ...msg]) {
                 const channelID = channelMention.replace("<#", "").replace(">","")
