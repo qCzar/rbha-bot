@@ -145,7 +145,7 @@ export default function(bastion, opt={}) {
             options: bastion.parsers.args(["tag"]),
 
             restrict: config.listRestrict,
-            restrictMessage: `You can only get the goosehunt list in <#639612405864726531>`, 
+            restrictMessage: `You can only get the goosehunt list in <#639612405864726531> <a:wobblegoose:1098413698009288784>`, 
 
             resolve: async function(context, tag) {  
                 if (tag === "all") return this.route("all")
@@ -331,7 +331,7 @@ export default function(bastion, opt={}) {
                 const duck = Ducks.bang(bastion, context.channelID, context.userID, context.user)
                 if (!duck) return;
 
-                let msg = `🦆💥${duck.misses.map(n => `💥`)}`
+                let msg = `<a:wobblegoose:1098413698009288784>💥${duck.misses.map(n => `💥`)}`
 
                 await bastion.bot.editMessage({
                     channelID: context.channelID,
