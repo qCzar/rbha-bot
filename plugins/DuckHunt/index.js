@@ -189,7 +189,7 @@ export default function(bastion, opt={}) {
         // },
 
         {
-            action: 'duckhunt:all',
+            action: 'goosehunt:all',
 
             resolve: async function(context, tag) {  
                 const counter = function(val) {
@@ -226,7 +226,7 @@ export default function(bastion, opt={}) {
         },
 
         {
-            action: 'duckhunt:speed',
+            action: 'goosehunt:speed',
 
             resolve: async function(context, tag) {  
                 const shots = await qShot.getAll()
@@ -279,7 +279,7 @@ export default function(bastion, opt={}) {
         },
 
         {
-            action: 'duckhunt:log',
+            action: 'goosehunt:log',
 
             resolve: async function(context, tag) {  
                 const shots = await qShot.Schema
