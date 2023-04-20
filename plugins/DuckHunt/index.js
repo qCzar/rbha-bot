@@ -9,30 +9,30 @@ import Table from 'ascii-table'
 
 const baseConfig = {
     channels: [
-        "358442034790400001",
-        "466328017342431233",
-        "358442118928400384",
-        "358527683337912320",
-        "358916551744946177",
-        "366820414820843522",
-        "358921562658701322",
-        "417871633768775693",
-        "375143658128932864",
-        "483859948850118678",
-        "420997471741935617",
-        "361192235146018826",
-        "464301806533738496",
-        "377347268430528522",
-        "416525963464146944",
-        "429459189824487463",
-        "358921536071139330",
-        "363123179696422916",
-        "376901773656326144",
-        "376901773656326144",
-        "450913008323919872",
-        "420136050065801227",
-        "359573690033242119",
-        "506911331257942027"
+    //    "777903554639298571",
+    //    "466328017342431233",
+    //    "358442118928400384",
+    //    "358527683337912320",
+    //    "358916551744946177",
+    //    "366820414820843522",
+    //    "358921562658701322",
+    //    "417871633768775693",
+    //    "375143658128932864",
+    //    "483859948850118678",
+    //    "420997471741935617",
+    //    "361192235146018826",
+    //    "464301806533738496",
+    //    "377347268430528522",
+    //    "416525963464146944",
+    //    "429459189824487463",
+    //    "358921536071139330",
+    //    "363123179696422916",
+    //    "376901773656326144",
+    //    "376901773656326144",
+    //    "450913008323919872",
+    //    "420136050065801227",
+    //    "359573690033242119",
+        "777903554639298571"
     ]
 }
 
@@ -61,16 +61,16 @@ export default function(bastion, opt={}) {
     const analyze = Analyze(bastion)
 
     async function saveBang(user, userID) {
-        // let player = await q.findOne({ userID })
-        // if (!player) {
-        //     q.create({
-        //         user, userID,
-        //         count: 1
-        //     })
-        // } else {
-        //     player.count++
-        //     q.update({ userID }, player)
-        // }
+        let player = await q.findOne({ userID })
+        if (!player) {
+            q.create({
+                user, userID,
+                count: 1
+            })
+        } else {
+            player.count++
+            q.update({ userID }, player)
+        }
     }
 
     async function sendDuck(channelID) {
@@ -119,11 +119,11 @@ export default function(bastion, opt={}) {
     })
 
     function formatTime(date) {
-        date = new moment(date).tz("America/Los_Angeles")
+        date = new moment(date).tz("America/Chicago")
         return date.fromNow() + ' [' + date.format("h:mma") + ']'
     }
 
-    // startTimeout()
+    startTimeout()
 
     // analyze.monitor(sendDuck)
 
@@ -145,7 +145,7 @@ export default function(bastion, opt={}) {
             options: bastion.parsers.args(["tag"]),
 
             restrict: config.listRestrict,
-            restrictMessage: `You can only get the duckhunt list in <#506911331257942027>`, 
+            restrictMessage: `You can only get the duckhunt list in <#639612405864726531>`, 
 
             resolve: async function(context, tag) {  
                 if (tag === "all") return this.route("all")
@@ -221,7 +221,7 @@ export default function(bastion, opt={}) {
                     }).map( p => {
                         return `${padScore(p.total)} [${counter(p.count)}-${p.misses}] ${p.user}`
                     }).join("\n")
-                return bastion.helpers.code(`# Season 3 Results\nDucks Spawned: ${shots.length}\n\n${msg}`, "ini")
+                return bastion.helpers.code(`# Season 1 Results\nDucks Spawned: ${shots.length}\n\n${msg}`, "ini")
             }
         },
 
@@ -274,7 +274,7 @@ export default function(bastion, opt={}) {
                 speederboard.removeBorder()
 
                 const msg = ''
-                return bastion.helpers.code(`# Season 3 Results\nSpeederboard\n\n${speederboard.toString()}`, "ini")
+                return bastion.helpers.code(`# Season 1 Results\nSpeederboard\n\n${speederboard.toString()}`, "ini")
             }
         },
 
@@ -313,51 +313,51 @@ export default function(bastion, opt={}) {
 
                 msg = bastion.bot.fixMessage(msg)
 
-                return bastion.helpers.code('# Season 3 Results\n\n' + msg, 'ini')
+                return bastion.helpers.code('# Season 1 Results\n\n' + msg, 'ini')
             }
         },
 
-        // {
-        //     command: "bang",
+        {
+            command: "bang",
 
-        //     resolve: async function(context, tag) {
-        //         const msg_id = context.evt.d.id
+            resolve: async function(context, tag) {
+                const msg_id = context.evt.d.id
 
-        //         await bastion.bot.deleteMessage({
-        //             channelID: context.channelID,
-        //             messageID: msg_id
-        //         })
+                await bastion.bot.deleteMessage({
+                   channelID: context.channelID,
+                    messageID: msg_id
+                })
 
-        //         const duck = Ducks.bang(bastion, context.channelID, context.userID, context.user)
-        //         if (!duck) return;
+                const duck = Ducks.bang(bastion, context.channelID, context.userID, context.user)
+                if (!duck) return;
 
-        //         let msg = `🦆💥${duck.misses.map(n => `💥`)}`
+                let msg = `🦆💥${duck.misses.map(n => `💥`)}`
 
-        //         await bastion.bot.editMessage({
-        //             channelID: context.channelID,
-        //             messageID: duck.msgId,
-        //             message: msg
-        //         })
+                await bastion.bot.editMessage({
+                    channelID: context.channelID,
+                    messageID: duck.msgId,
+                    message: msg
+                })
 
-        //         if (duck.newShot) {
-        //             saveBang(context.user, context.userID)
-        //         }
-        //     },
+                if (duck.newShot) {
+                    saveBang(context.user, context.userID)
+                }
+            },
 
-        //     methods: {
-        //         getSecondsMinutes(shotTime) {
-        //             let time = shotTime / 1000
-        //             time = Math.floor(time * 1000) / 1000
+            methods: {
+                getSecondsMinutes(shotTime) {
+                    let time = shotTime / 1000
+                    time = Math.floor(time * 1000) / 1000
     
-        //             if (time < 60) {
-        //                 return time + "s"
-        //             }
+                    if (time < 60) {
+                        return time + "s"
+                    }
 
-        //             time = Math.floor(time / 60)
-        //             return time + "m"
-        //         }
-        //     }
-        // }
+                    time = Math.floor(time / 60)
+                    return time + "m"
+                }
+            }
+        }
 
     ]
 }
