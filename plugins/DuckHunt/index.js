@@ -74,7 +74,7 @@ export default function(bastion, opt={}) {
     }
 
     async function sendDuck(channelID) {
-        const msg = await bastion.send(channelID, "\:duck:")
+        const msg = await bastion.send(channelID, "\:wobblegoose:")
         Ducks.create(channelID, msg.id)
     }
 
