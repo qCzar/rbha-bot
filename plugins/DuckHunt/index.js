@@ -99,7 +99,7 @@ export default function(bastion, opt={}) {
     Ducks.onDone(duck => {
         console.log("DONE", duck)
         const time = getSecondsMinutes(duck.shotTime)
-        let msg = `\:dog: *duck shot by ${duck.shotBy.user} in ${time}* `
+        let msg = `\:dog: *goose shot by ${duck.shotBy.user} in ${time}* `
 
         if (duck.misses.length) {
             const misses = duck.misses.map(n => {
@@ -140,12 +140,12 @@ export default function(bastion, opt={}) {
         // },
 
         {
-            command: 'duckhunt',
+            command: 'goosehunt',
 
             options: bastion.parsers.args(["tag"]),
 
             restrict: config.listRestrict,
-            restrictMessage: `You can only get the duckhunt list in <#639612405864726531>`, 
+            restrictMessage: `You can only get the goosehunt list in <#639612405864726531>`, 
 
             resolve: async function(context, tag) {  
                 if (tag === "all") return this.route("all")
@@ -154,7 +154,7 @@ export default function(bastion, opt={}) {
                 return this.route("log")
 
                 const user = await q.findOne({ userID: context.userID })
-                if (!user) return `You haven't shot any ducks, keep looking!`
+                if (!user) return `You haven't shot any geese, keep looking!`
 
                 return `Count: **${user.count}**`
             }
@@ -221,7 +221,7 @@ export default function(bastion, opt={}) {
                     }).map( p => {
                         return `${padScore(p.total)} [${counter(p.count)}-${p.misses}] ${p.user}`
                     }).join("\n")
-                return bastion.helpers.code(`# Season 1 Results\nDucks Spawned: ${shots.length}\n\n${msg}`, "ini")
+                return bastion.helpers.code(`# Season 1 Results\nGeese Spawned: ${shots.length}\n\n${msg}`, "ini")
             }
         },
 
