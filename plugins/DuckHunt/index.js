@@ -129,15 +129,15 @@ export default function(bastion, opt={}) {
 
     return [
 
-        {
-            command: 'duck',
-
-            resolve: async function(context, tag) {  
-                const msg = await bastion.send(context.channelID, "\:duck:")
-                Ducks.create(context.channelID, msg.id)
-                sendDuck()
-            }
-        },
+//        {
+//            command: 'goose',
+//
+//            resolve: async function(context, tag) {  
+//                const msg = await bastion.send(context.channelID, "\:duck:")
+//                Ducks.create(context.channelID, msg.id)
+//                sendDuck()
+//            }
+//        },
 
         {
             command: 'goosehunt',
