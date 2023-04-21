@@ -30,8 +30,8 @@ const baseConfig = {
     //    "376901773656326144",
     //    "376901773656326144",
     //    "450913008323919872",
-    //    "420136050065801227",
-    //    "359573690033242119",
+        "639612405864726531",
+        "639610822473154623",
         "777903554639298571"
     ]
 }
@@ -125,19 +125,19 @@ export default function(bastion, opt={}) {
 
     startTimeout()
 
-    // analyze.monitor(sendDuck)
+    analyze.monitor(sendDuck)
 
     return [
 
-        // {
-        //     command: 'duck',
+        {
+            command: 'duck',
 
-        //     resolve: async function(context, tag) {  
-        //         const msg = await bastion.send(context.channelID, "\:duck:")
-        //         Ducks.create(context.channelID, msg.id)
-        //         // sendDuck()
-        //     }
-        // },
+            resolve: async function(context, tag) {  
+                const msg = await bastion.send(context.channelID, "\:duck:")
+                Ducks.create(context.channelID, msg.id)
+                sendDuck()
+            }
+        },
 
         {
             command: 'goosehunt',
