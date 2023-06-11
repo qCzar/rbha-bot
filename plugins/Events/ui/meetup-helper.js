@@ -5,14 +5,14 @@ import 'moment-timezone'
 
 const toLocal = (date) => {
   console.log("Date", date.toString())
-  const d = moment.utc(date).tz("America/Los_Angeles")
+  const d = moment.utc(date).tz("America/Chicago")
   console.log("to local", d)
   return d.toDate()
 }
 
 const parseData = (data) => data ? Object.assign({}, data.options, {
-  date: moment.utc(data.timestamp).tz("America/Los_Angeles").format('YYYY-MM-DD'),
-  time: moment.utc(data.timestamp).tz("America/Los_Angeles").format("HH:mm")
+  date: moment.utc(data.timestamp).tz("America/Chicago").format('YYYY-MM-DD'),
+  time: moment.utc(data.timestamp).tz("America/Chicago").format("HH:mm")
 }) : null
 
 export default (data) => {
