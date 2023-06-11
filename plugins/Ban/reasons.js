@@ -8,7 +8,7 @@ const list = [
     "Saying pineapple on a pizza is okay",
     "Producing too much salt",
     "Texting while driving (rule 4 no idiots)",
-    "Disrespecting the Queen",
+    "Disrespecting Bestie Rey",
     "VAC banned from a secure server",
     "Rule 69",
     "Rule 420",
