@@ -1,9 +1,7 @@
 const list = [
     "Caught sniffing glue",
-    "Forgot to turn off the stove",
     "Died (rule 2 no dying)",
     "Replied to a reddit comment without upvoting it first",
-    "Kicked the bucket but the bucket kicked back",
     "Has a voat account",
     "Walks too slow",
     "Owns a fedora (rule 3 no fedoras)",
@@ -15,20 +13,12 @@ const list = [
     "Rule 69",
     "Rule 420",
     "Non-Christian discussion (rule 5 this is a christian server)",
-    "SNAP",
-    "Beat Prad in Jackbox",
     "Posting your nudes in #general",
-    "Smuggling Kinder Surprise Eggs across the border in 2005",
     "Because fuck you that's why",
     "😂😂😂",
     "🖕🖕🔥😤🔥🖕🖕",
     "Wearing socks with sandals",
-    "Not turning volume up when Toto's Africa came on",
-    "Eating unfrosted pop tarts",
-    "Joining drunk VC without any alcohol (rule 9 get hydrated)",
     "Using white theme on discord",
-    "Inviting people to eat leftover lasagna but not actually having any",
-    "Giving your S.O. a potato as a gift (rule 10 don't be shitty)",
     "Didn't come through",
     "Posting an old meme (please keep up)",
     "Tried to ford the river but died of dystenary first",
@@ -51,11 +41,10 @@ const list = [
     "Disagreed with Vinlam",
     "Lost in High Stakes Uno",
     "Didn't stack a +2 Card in Uno",
-    "<:jordan:1094050382747009114>",
     "Kicked a goose",
     "Gave Comic's cat bad vibes",
     "Won't shut up about pineapple on pizza",
-    "Went on a vacation but didn't post travel pics to <#639852536248926219> and local cuisine reviews to <#639613763217260555>"
+    "Didn't say Good Morning to Pink"
 ];
 
 export default {
