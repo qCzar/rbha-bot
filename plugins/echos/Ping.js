@@ -4,7 +4,7 @@ export default function(bastion, config={}) {
 
         {
             command: "ping",
-            resolve: "pong!"
+            resolve: "HONK!"
         }
 
     ]
