@@ -61,7 +61,7 @@ export default bastion => ([
         listRestrict: ["shitpost", "admin"]
     }),
     StockChart(bastion, {
-        restrict: ["stocks"]
+        restrict: ["804035758683848776"]
     }),
 //    Subscribe(bastion, { subscriptions }),
 //    Strava(bastion, {
