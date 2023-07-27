@@ -22,7 +22,7 @@ export default function(bastion, config={}) {
         },
         {
             command: "v",
-            resolve: "Code last updated: 06/11/23"
+            resolve: "Code last updated: 07/26/23"
         },
         {
             command: "git",
@@ -46,6 +46,18 @@ export default function(bastion, config={}) {
             command: "website",
             resolve: "We can be found online at: https://rochesterbored.com"
         },
+        {
+            command: "welcome",
+            resolve: "If you have any questions, do ask! You can check out <#639612641727217664> for upcoming meetups. We are member driven so we rely on members to create meetups, if you don't see anything please create something! Don't worry if there's anther at the same day or time or a similar meetup exists, not everyone will be intersted in every meetup, or make every meetup."
+        },
+        {
+            command: "resources",
+            resolve: "Check out <id:guide> for our server resources, such as bot commands and meetups"
+        },
+        {
+            command: "channels",
+            resolve: "Visit <id:browse> to update what roles that are assigned to you, as well as what categories and channels that are visible to you."
+        }
 
         // {
         //     command: "test",
