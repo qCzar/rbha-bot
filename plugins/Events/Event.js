@@ -14,6 +14,9 @@ const States = {
 // I'm not going to change the variable name
 const PDT_OFFSET = -300
 const PST_OFFSET = -360
+let today = new Date()
+const new_year = setFullYear(2024, 1, 1)
+let duration = Math.round((new_year - today) / (1000 * 60 * 60 * 24))*-1
 
 const isDaylightSavings = (date) => {
     const dsStart = new Date(date.getFullYear(), 2, 10)
@@ -131,8 +134,8 @@ export default function({
         }
 
         // Date is not too far into the future
-        if (refDate.diff(date_moment, 'days') < -30) {
-            return `Date is set too far into the future, must be less than 30 days`
+        if (refDate.diff(date_moment, 'days') < duration) {
+            return `Date is set too far into the future, must be before 01/01/2024`
         }
     }
 
