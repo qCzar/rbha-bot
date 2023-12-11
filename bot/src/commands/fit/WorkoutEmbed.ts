@@ -12,6 +12,7 @@ import * as Workout from "./Workout";
 import * as Week from "./Week";
 import * as Exp from "./Exp";
 import * as Format from "./Format";
+import { isAfter, subDays } from "date-fns";
 
 const log = logger ("fit:workout-embed");
 const defaultAvatar = "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png";
@@ -123,6 +124,13 @@ export const expSoFar = (workout: Workout.workout, workouts: Workout.workout[]):
    return Exp.sum (previousExp) + Exp.total (workout.exp);
 };
 
+// We won't post workouts from users who have gone inactive.
+const inactive = (user: User.authorized) => {
+   const lastActive = new Date (user.lastActive || 0);
+   const limit = subDays (new Date (), 14);
+   return isAfter (lastActive, limit);
+};
+
 // When a new workout gets recorded we post it to the #strava channel with these steps:
 //
 // 1. Calculate the amount of EXP gained from the activity
@@ -142,6 +150,12 @@ export const post = async (
       log.debug ("User is not authorized with the bot", { stravaId });
       return new Error ("Could not post workout: User is not authorized (strava ID: " + stravaId + ")");
    }
+
+   // todo: enable after a week or so
+   // if (inactive (user)) {
+   //    log.debug ("User has not posted in a while", { lastActive: user.lastActive });
+   //    return new Error ("User has not posted recently");
+   // }
 
    const member = await Guild.member (user.discordId, client);
    if (!member) {
@@ -217,7 +231,8 @@ export const post = async (
       // This lets people fix the title / activity type even after the workout has been posted
       const channel = await getStravaChannel (client);
       const message = (previouslyRecorded?.message_id)
-         ? await channel.messages.fetch (previouslyRecorded.message_id).then (msg => msg.edit (content))
+         ? await channel.messages.fetch (previouslyRecorded.message_id)
+            .then ((msg) => msg.edit (content) as Promise<DiscordJs.Message<never>>)
          : await channel.send (content);
 
       await Workout.save ({
