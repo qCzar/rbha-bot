@@ -13,8 +13,6 @@ const channels = {
 //    "boombot": "432766496700235776",
 //    "stocks": "363123179696422916",
 //    "dungeon": "497505757865050112",
-    "announcement": process.env.C_ANNOUNCEMENT,
-    "compact": process.env.C_COMPACT
 }
 
 }
