@@ -15,8 +15,6 @@ const channels = {
 //    "dungeon": "497505757865050112",
 }
 
-}
-
 const bastion = Bastion({
     token: process.env.DISCORD_TOKEN,
     channels,
