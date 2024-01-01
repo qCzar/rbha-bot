@@ -1,6 +1,21 @@
-version: '3.4'
+ersion: '3.4'
+
+volumes:
+  bored_bot_db_data:
+
+networks:
+  bored_bot_network:
 
 services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    command: mongod --quiet --logpath /dev/null
+    volumes:
+      - bored_bot_db_data:/data/db
+    networks:
+      - bored_bot_network
+
   bored_bot_legacy:
     container_name: bb_legacy
     build: ./bot_legacy
@@ -8,3 +23,7 @@ services:
     environment:
       NODE_ENV: production
     restart: always
+    depends_on:
+      - mongo
+    networks:
+      - bored_bot_network
