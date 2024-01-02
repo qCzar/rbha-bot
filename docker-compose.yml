@@ -2,6 +2,11 @@ version: '3.4'
 
 volumes:
   bored_bot_db_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: "../data/db"
+      o: bind
 
 networks:
   bored_bot_network:
@@ -11,8 +16,6 @@ services:
     image: mongo
     container_name: mongo
     command: mongod --quiet --logpath /dev/null
-    ports:
-      - "27018:27017"
     volumes:
       - bored_bot_db_data:/data/db
     networks:
@@ -21,6 +24,18 @@ services:
   bored_bot_legacy:
     container_name: bb_legacy
     build: ./bot_legacy
+    env_file: .env.prod
+    environment:
+      NODE_ENV: production
+    restart: always
+    depends_on:
+      - mongo
+    networks:
+      - bored_bot_network
+
+  bored_bot:
+    container_name: bb
+    build: ./bot
     env_file: .env.prod
     environment:
       NODE_ENV: production
