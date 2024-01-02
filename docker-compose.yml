@@ -44,5 +44,3 @@ services:
       - mongo
     networks:
       - bored_bot_network
-    ports:
-      - "80:80"
