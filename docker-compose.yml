@@ -45,4 +45,4 @@ services:
     networks:
       - bored_bot_network
     ports: 
-      - 80
+      - 80:80
