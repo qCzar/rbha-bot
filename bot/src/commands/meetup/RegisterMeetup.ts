@@ -33,8 +33,8 @@ const meetupGlobal = Command.filtered ({
          .with ("edit", () => message.reply ("Editing a meetup is now done inside the Meetup thread"))
          .with ("cancel", () => message.reply ("Canceling a meetup is now done inside the Meetup thread"))
          .with ("mention", () => message.reply ("Mentioning a meetup is now done inside the Meetup thread"))
-         .with (__.nullish, () => message.reply ("Click here to create a meetup: https://hellos3b.github.io/sjbha-bot/meetup"))
-         .otherwise (() => message.reply ("Click here to create a meetup: https://hellos3b.github.io/sjbha-bot/meetup"))
+         .with (__.nullish, () => message.reply ("Click here to create a meetup: https://qczar.github.io/rbha-bot/meetup"))
+         .otherwise (() => message.reply ("Click here to create a meetup: https://qczar.github.io/rbha-bot/meetup"))
 });
 
 const meetupWrongChannel = Command.filtered ({
