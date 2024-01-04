@@ -21,7 +21,7 @@
     <Textfield 
       label="Name or Address" 
       name="location" 
-      placeholder="1234 DemonZerg lane, Workshop Food Hall, Kasson, etc"
+      placeholder="1234 DemonZerg Lane SW, Workshop Food Hall, Kasson, etc"
       bind:value={$store.location}/>
 
     <Checkbox
