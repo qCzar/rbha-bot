@@ -62,7 +62,7 @@ module.exports = (_, argv) => {
       new DefinePlugin ({
         '__HOST__': JSON.stringify(
           (argv.mode === 'production')
-            ? 'http://discord.rochesterbored.com'
+            ? 'http://discord.rochesterbored.com:5000'
             : 'http://localhost:5000'
         )
       }),
