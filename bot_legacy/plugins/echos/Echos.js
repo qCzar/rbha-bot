@@ -12,8 +12,8 @@ export default function(bastion, config={}) {
         },
         
         {
-            command: "help",
-            resolve: "Command has been moved to `!meetup` or `!meetup help`"
+            command: "pronouns",
+            resolve: "RBHA does not provide roles for gender pronouns because all members can edit their user name for each discord server, allowing them to add their preferred pronouns to their handle. Additionly, looking at someones profile for their selected roles is an extra step many won't usually do."
         },
 
         {
